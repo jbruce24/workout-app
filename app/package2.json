@@ -1,0 +1,22 @@
+{
+  "name": "workoutapp",
+  "version": "1.0.0",
+  "description": "this is a workout app i have been building to store info",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"test\": \"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbruce24/workout-app.git"
+  },
+  "keywords": [
+    "workout"
+  ],
+  "author": "Jared Bruce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbruce24/workout-app/issues"
+  },
+  "homepage": "https://github.com/jbruce24/workout-app#readme"
+}
