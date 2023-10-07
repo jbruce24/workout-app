@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: todo-site
-        image: JBRUCE24/WORKOUT-APP
+        image: JBRUCE24/workoutapp
         imagePullPolicy: Always
 ---
 apiVersion: v1
