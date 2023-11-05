@@ -2,7 +2,7 @@ ARG NODE_VERSION=18.0.0
 
 FROM node:${NODE_VERSION}-alpine as base
 WORKDIR /usr/src/app
-EXPOSE 3000
+EXPOSE 5000
 
 FROM base as dev
 RUN --mount=type=bind,source=package.json,target=package.json \
@@ -21,4 +21,4 @@ RUN --mount=type=bind,source=package.json,target=package.json \
     npm ci --omit=dev
 USER node
 COPY . .
-CMD node apiTest/index.js
+CMD node index.js
