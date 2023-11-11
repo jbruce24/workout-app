@@ -16,8 +16,23 @@ app.get('/', (request, response) => {
 }); 
 
 app.get('/users', db.getUsers);
-app.get('/movements',db.getMovements);
-app.get('/workouts', db.getWorkouts);
+app.get('/workouts', db.getWorkouts);app.get('/workouts', (req, res) => {
+    try {
+        getWorkouts(req, res);
+    } catch (error) {
+        console.error("Error in /workouts route: ", error);
+        res.status(500).send('Server error');
+    }
+});
+
+app.get('/movements', (req, res) => {
+    try {
+        getMovements(req, res);
+    } catch (error) {
+        console.error("Error in /movements route: ", error);
+        res.status(500).send('Server error');
+    }
+});
 
 app.listen(port , () => {
     console.log(`App running on port ${port}`);

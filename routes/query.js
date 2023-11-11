@@ -13,8 +13,9 @@ const getUsers = (request, response) => {
 };
 
 const getWorkouts = (request, response) => {
-    pool.query('SELECT * FROM Workouts', (error, results) => {
+    pool.query('SELECT * FROM Workout', (error, results) => {
         if(error){
+            console.log(error);
             throw error;
         };
         response.status(200).json(results.rows);
@@ -22,8 +23,9 @@ const getWorkouts = (request, response) => {
 };
 
 const getMovements = (request, response) => {
-    pool.query('SELECT * FROM Movements', (error, results) => {
+    pool.query('SELECT * FROM Movement', (error, results) => {
         if(error){
+            console.log(error);
             throw error;
         };
         response.status(200).json(results.rows);
