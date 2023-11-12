@@ -8,7 +8,7 @@ const addMovement = (request, response) => {
     
     const {Name,Function} = request.body;
 
-    pool.query('INSERT INTO "Movement" ("Name","Function") VALUES ($1, $2)', ["Name", "Function"], (error, results) => {
+    pool.query('INSERT INTO "Movement" ("Name","Function") VALUES ($1, $2)', [Name, Function], (error, results) => {
         if (error) {
             throw error;
         }
