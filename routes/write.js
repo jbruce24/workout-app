@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const pool = require('./db.js');
 
+app.use(bodyParser.json());
+
 const addMovement = (request, response) => {
     console.log(request.body);
     
