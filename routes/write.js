@@ -4,7 +4,9 @@ const app = express();
 const pool = require('./db.js');
 
 const addMovement = (request, response) => {
-    pool.query('INSERT INTO "Movement" ("Name","Function") VALUES ($1, $2)', [request.body.Name, request.body.Function], (error, results) => {
+    const {Name,Function} = request.body;
+
+    pool.query('INSERT INTO "Movement" ("Name","Function") VALUES ($1, $2)', [Name, Function], (error, results) => {
         if (error) {
             throw error;
         }

@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port= 3000;
 const db = require('./routes/query.js');
+const dbPost = require('./routes/write.js');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded(
@@ -21,6 +23,7 @@ app.get('/movement', db.getMovements);
 app.get('/program', db.getProgram);
 app.get('/workoutType', db.getWorkoutType);
 app.get('/workingSet', db.getWorkingSet);
+app.post('/movement', dbPost.addMovement);
 
 
 app.listen(port , () => {
