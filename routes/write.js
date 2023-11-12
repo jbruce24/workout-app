@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded(
 const addMovement = (request, response) => {
     console.log(request.body);
     
-    const { name, program } = request.query;
+    const { name, program } = request.body;
 
     pool.query('INSERT INTO "Movement" ("Name","Function") VALUES ($1, $2)', [name, program], (error, results) => {
         if (error) {
