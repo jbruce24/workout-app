@@ -24,6 +24,11 @@ app.get('/program', db.getProgram);
 app.get('/workoutType', db.getWorkoutType);
 app.get('/workingSet', db.getWorkingSet);
 app.post('/movement', dbPost.addMovement);
+app.post('/program', dbPost.addProgram);
+app.post('/workoutType', dbPost.addWorkoutType);
+app.post('/workingSet', dbPost.addWorkingSet);
+app.post('/workouts', dbPost.addWorkouts);
+app.post('/users', dbPost.addUsers);
 
 
 app.listen(port , () => {
