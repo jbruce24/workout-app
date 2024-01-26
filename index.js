@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded(
 ));
 
 app.get('/', (request, response) => {
-    response.json({info: 'Node.js, Express, and Postgres API'});
+    response.json({info: 'Node.js, Express, and Postgres API Test'});
 }); 
 
 app.get('/users', db.getUsers);
@@ -25,10 +25,10 @@ app.get('/workoutType', db.getWorkoutType);
 app.get('/workingSet', db.getWorkingSet);
 app.post('/movement', dbPost.addMovement);
 app.post('/program', dbPost.addProgram);
-app.post('/workoutType', dbPost.addWorkoutType);
+//app.post('/workoutType', dbPost.addWorkoutType);
 app.post('/workingSet', dbPost.addWorkingSet);
-app.post('/workouts', dbPost.addWorkouts);
-app.post('/users', dbPost.addUsers);
+//app.post('/workouts', dbPost.addWorkouts);
+//app.post('/users', dbPost.addUsers);
 
 
 app.listen(port , () => {

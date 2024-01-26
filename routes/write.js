@@ -49,8 +49,4 @@ const addWorkingSet = (request, response) => {
     });
 };
 
-
-
-
-
 module.exports = {addMovement, addProgram, addWorkingSet};
