@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port= 3000;
+const port= 4000;
 const db = require('./routes/query.js');
 const dbPost = require('./routes/write.js');
 

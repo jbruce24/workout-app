@@ -18,7 +18,7 @@
   "homepage": "https://github.com/jbruce24/workout-app#readme",
   "scripts": {
     "prettify": "prettier -l --write \"**/*.js\"",
-    "dev": "nodemon --inspect=0.0.0.0:9229 -L index.js",
+    "dev": "nodemon --inspect=0.0.0.0:9229 -L server/index.js",
     "test": "\"test\": \"echo \\\"Error: no test specified\\\" && exit 1\""
   },
   "dependencies": {

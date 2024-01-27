@@ -26,7 +26,13 @@ services:
     restart: always
     ports:
       - 2020:8080
-  node:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile 
+    ports: 
+      - 3000:3000
+  server:
     build:
       context: .
       target: dev
@@ -37,7 +43,7 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/db-password
       POSTGRES_DB: example
     ports:
-      - 3000:3000
+      - 4000:4000
       - 9229:9229
     depends_on:
       db:
@@ -46,6 +52,8 @@ services:
       - db-password
     volumes:
       - .src:/usr/src/src
+    restart:
+      on-failure
 volumes:
   pg-data:
 secrets:
