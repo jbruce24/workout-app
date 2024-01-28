@@ -28,7 +28,8 @@
     "react-dom": "^18.2.0",
     "sqlite3": "^5.1.2",
     "uuid": "^9.0.0",
-    "wait-port": "^1.0.4"
+    "wait-port": "^1.0.4",
+    "web-vitals": "^1.0.1"
   },
   "resolutions": {
     "ansi-regex": "5.0.1"
