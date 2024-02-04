@@ -4,8 +4,9 @@ const app = express();
 const port= 4000;
 const db = require('./routes/query.js');
 const dbPost = require('./routes/write.js');
+const cors = require('cors');
 
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded(
     {

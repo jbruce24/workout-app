@@ -1,32 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
-function App() {
+function User() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:4000/workingSet')
+    .then(response => response.json())
+    .then(data => setData(data))
+    .catch(error => console.error('Error:', error));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit<code>App.js</code> and save to reload.
-        </p>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Weight</th>
+          <th>Sets</th>
+          <th>Reps</th>
+          {/* Add more <th> elements for each column in your data */}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={index}>
+            <td>{item.weight}</td>
+            <td>{item.sets}</td>
+            <td>{item.reps}</td>
+            {/* Add more <td> elements for each column in your data */}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
-function MyButton(){
-  return (
-    <button>Click Me</button>
-  );
-}
-
-export default App;
+export default User;

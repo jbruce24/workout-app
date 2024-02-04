@@ -1,7 +1,10 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const app = express();
-const pool = require('./db.js')
+const pool = require('./db.js');
+const cors = require('cors');
+
+app.use(cors());
 
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results)=>{
@@ -49,7 +52,7 @@ const getWorkingSet = (request, response) => {
 };
 
 const getWorkouts = (request, response) => {
-    pool.query('SELECT * FROM "Workouts"', (error, results)=>{
+    pool.query('SELECT * FROM "Workout"', (error, results)=>{
         if(error){
             throw error;
         };
