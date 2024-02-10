@@ -33,6 +33,16 @@ const getMovements = (request, response) => {
     });
 };
 
+const getMovementsId = (request, response) => {
+    const id = request.params.id;
+    pool.query('SELECT * FROM "Movement" where id = $1', [id], (error, results)=>{
+        if(error){
+            throw error;
+        };
+        response.status(200).json(results.rows);
+    });
+};
+
 const getWorkoutType = (request, response) => {
     pool.query('SELECT * FROM "WorkoutType"', (error, results)=>{
         if(error){
@@ -60,6 +70,6 @@ const getWorkouts = (request, response) => {
     });
 };
 
-module.exports = {getUsers, getMovements,getProgram,getWorkingSet, getWorkoutType, getWorkouts};
+module.exports = {getUsers, getMovements, getMovementsId ,getProgram,getWorkingSet, getWorkoutType, getWorkouts};
 
 //module.exports = {getWorkouts};

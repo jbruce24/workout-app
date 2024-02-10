@@ -21,6 +21,7 @@ app.get('/', (request, response) => {
 app.get('/users', db.getUsers);
 app.get('/workouts', db.getWorkouts);
 app.get('/movement', db.getMovements);
+app.get('/movement/:id', db.getMovementsId);
 app.get('/program', db.getProgram);
 app.get('/workoutType', db.getWorkoutType);
 app.get('/workingSet', db.getWorkingSet);
