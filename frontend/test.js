@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-function User() {
+function Test() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('http://10.0.0.201:4000/movement')
+    fetch('http://10.0.0.201:4000/workingSet')
     .then(response => response.json())
     .then(data => setData(data))
     .catch(error => console.error('Error:', error));
@@ -15,17 +15,19 @@ function User() {
     <table>
       <thead>
         <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Function</th>
+          <th>Weight</th>
+          <th>Sets</th>
+          <th>Reps2</th>
+          {/* Add more <th> elements for each column in your data */}
         </tr>
       </thead>
       <tbody>
         {data.map((item, index) => (
           <tr key={index}>
-            <td><button>Select</button></td>
-            <td>{item.Name}</td>
-            <td>{item.Function}</td>
+            <td><button>test</button></td>
+            <td>{item.weight}</td>
+            <td>{item.sets}</td>
+            <td>{item.reps}</td>
           </tr>
         ))}
       </tbody>
@@ -33,4 +35,4 @@ function User() {
   );
 }
 
-export default User;
+export default Test;
